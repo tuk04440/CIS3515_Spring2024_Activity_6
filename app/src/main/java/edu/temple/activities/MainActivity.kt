@@ -23,8 +23,7 @@ class MainActivity : AppCompatActivity() {
         Log.d("Array values", textSizes.contentToString())
 
         with (findViewById<RecyclerView>(R.id.textSizeSelectorRecyclerView)) {
-            val callback = {item: Int ->
-                val fontSize = item
+            val callback = {fontSize: Int ->
                 val launchIntent = Intent(this@MainActivity, DisplayActivity::class.java)
                 launchIntent.putExtra(MESSAGE_KEY, fontSize)
                 startActivity(launchIntent)

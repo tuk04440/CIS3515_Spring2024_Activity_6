@@ -2,6 +2,7 @@ package edu.temple.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.TypedValue
 import android.widget.TextView
 
 class DisplayActivity : AppCompatActivity() {
@@ -11,7 +12,8 @@ class DisplayActivity : AppCompatActivity() {
 
         // TODO Step 3: Extract transferred value and use for lyricsDisplayView text size
         with (findViewById<TextView>(R.id.lyricsDisplayTextView)) {
-            val fontSize = intent.getStringExtra()
+            val fontSize = intent.getIntExtra(MESSAGE_KEY, 12)
+            this.textSize = fontSize.toFloat()
         }
 
 
