@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
+const val MESSAGE_KEY = "fontSize"
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,7 +26,7 @@ class MainActivity : AppCompatActivity() {
             val callback = {item: Int ->
                 val fontSize = item
                 val launchIntent = Intent(this@MainActivity, DisplayActivity::class.java)
-                launchIntent.putExtra("fontSize", fontSize)
+                launchIntent.putExtra(MESSAGE_KEY, fontSize)
                 startActivity(launchIntent)
             }
             // TODO Step 2: Implement lambda body to launch new activity and pass value
